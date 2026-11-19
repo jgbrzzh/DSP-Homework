@@ -42,7 +42,8 @@ blockquote p { margin: .2rem 0; }
 figure { margin: 1.5rem 0; }
 figure img { display: block; width: 100%; height: auto; }
 figcaption { font-size: .88rem; text-align: center; color: #455e6c; }
-.math.display { display: block; overflow-x: auto; overflow-y: hidden; padding: .4rem 0; }
+.formula { overflow-x: auto; overflow-y: hidden; padding: .4rem 0; }
+.formula math { width: max-content; min-width: 100%; }
 math { font-family: "Cambria Math", math; }
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
 td, th { padding: .48rem .55rem; border: 1px solid var(--line); vertical-align: top; }
@@ -54,12 +55,11 @@ footer { text-align: center; padding: 1rem 0 2rem; }
   .layout aside { position: static; }
   .contents { max-height: 18rem; margin-bottom: 1.75rem; }
   table { display: block; overflow-x: auto; }
-  .math.display { max-width: 100%; }
 }
 @media print {
   .cover, aside, footer, .skip { display: none; }
   .layout { display: block; width: auto; margin: 0; }
   main > section { break-before: page; }
   main > section:first-child { break-before: auto; }
-  figure, tr, .math.display { break-inside: avoid; }
+  figure, tr, .formula { break-inside: avoid; }
 }

@@ -1,5 +1,6 @@
 """Render the handout to the Pages publishing folder."""
 from pathlib import Path
+import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parent
@@ -28,7 +29,9 @@ def build():
     )
     if result.stderr.strip():
         raise RuntimeError(result.stderr)
-    (ROOT / "docs" / "index.html").write_text(result.stdout, encoding="utf-8")
+    html = re.sub(r'(<math display="block".*?</math>)', r'<div class="formula">\1</div>',
+                  result.stdout, flags=re.DOTALL)
+    (ROOT / "docs" / "index.html").write_text(html, encoding="utf-8")
 
 
 if __name__ == "__main__":
