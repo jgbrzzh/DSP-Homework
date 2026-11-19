@@ -29,7 +29,7 @@ def build():
     )
     if result.stderr.strip():
         raise RuntimeError(result.stderr)
-    html = re.sub(r'(<math display="block".*?</math>)', r'<div class="formula">\1</div>',
+    html = re.sub(r'(<math display="block".*?</math>)', r'<span class="formula">\1</span>',
                   result.stdout, flags=re.DOTALL)
     (ROOT / "docs" / "index.html").write_text(html, encoding="utf-8")
 
