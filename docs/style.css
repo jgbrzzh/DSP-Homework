@@ -56,6 +56,9 @@ footer { text-align: center; padding: 1rem 0 2rem; }
   .contents { max-height: 18rem; margin-bottom: 1.75rem; }
   table { display: block; overflow-x: auto; }
 }
+@media (max-width: 360px) {
+  math[display="inline"] { display: inline-block; max-width: 100%; overflow-x: auto; vertical-align: middle; }
+}
 @media print {
   .cover, aside, footer, .skip { display: none; }
   .layout { display: block; width: auto; margin: 0; }
