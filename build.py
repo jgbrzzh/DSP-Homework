@@ -9,6 +9,9 @@ CHAPTERS = [
     ("chapter-1", "01 第一章 离散时间信号与系统.md"),
     ("chapter-2", "02 第二章 采样与重建.md"),
     ("chapter-3", "03 第三章 DFT与FFT.md"),
+    ("chapter-4", "05 第四章 IIR滤波器设计.md"),
+    ("chapter-5", "06 第五章 FIR滤波器设计.md"),
+    ("chapter-6", "07 第六章 数字滤波器结构.md"),
     ("reference", "04 题型与公式速查.md"),
 ]
 
