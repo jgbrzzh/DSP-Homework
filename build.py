@@ -32,8 +32,10 @@ def build():
     )
     if result.stderr.strip():
         raise RuntimeError(result.stderr)
+    # Pandoc/texmath may encode unary minus as an identifier. Keep it an operator.
+    mathml = result.stdout.replace('<mi>−</mi>', '<mo form="prefix">−</mo>')
     html = re.sub(r'(<math display="block".*?</math>)', r'<span class="formula">\1</span>',
-                  result.stdout, flags=re.DOTALL)
+                  mathml, flags=re.DOTALL)
     (ROOT / "docs" / "index.html").write_text(html, encoding="utf-8")
 
 

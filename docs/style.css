@@ -44,7 +44,9 @@ figure img { display: block; width: 100%; height: auto; }
 figcaption { font-size: .88rem; text-align: center; color: #455e6c; }
 .formula { display: block; overflow-x: auto; overflow-y: hidden; padding: .4rem 0; }
 .formula math { width: max-content; min-width: 100%; }
-math { font-family: "Cambria Math", math; }
+math { font-family: "Cambria Math", "STIX Two Math", "Noto Sans Math", math; }
+/* The local SVG renderer supplies glyph paths rather than system math fonts. */
+.formula mjx-container[display="true"] { margin: 0; }
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
 td, th { padding: .48rem .55rem; border: 1px solid var(--line); vertical-align: top; }
 th { background: #e9f2f2; color: var(--ink); text-align: left; }

@@ -5,4 +5,4 @@
 - 网站入口为 [docs/index.html](docs/index.html)。
 - 分章 Markdown 源稿位于 [handout](handout/)，逐题复核记录见 [核对记录](AUDIT.md)。
 - 生成网页需要 Python 3 和 Pandoc 3。在仓库根目录运行 **python build.py**。
-- GitHub Pages 从 **main** 分支的 **/docs** 发布。网页使用原生 MathML，公式与图片可在离线环境阅读。
+- GitHub Pages 从 **main** 分支的 **/docs** 发布。网页保留原生 MathML 作为无 JavaScript 时的回退，并使用随站点分发的 MathJax 3.2.2（MathML → SVG）统一公式字形；无需 CDN，可离线阅读。构建时统一将一元负号标记为 MathML 运算符。第三方许可证见 [MathJax LICENSE](docs/assets/mathjax/LICENSE)。
